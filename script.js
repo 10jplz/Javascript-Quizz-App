@@ -1,3 +1,5 @@
+//Global Variables used to display items to html
+
 var timeEl = document.querySelector(".time");
 var start = document.getElementById("startBtn");
 var startDiv = document.getElementById("startDiv");
@@ -13,6 +15,8 @@ var clear = document.querySelector(".clearBtn");
 var timerInterval;
 var scores = [];
 
+
+// Created Varibles/ Objects to for each question
 var Q1 = {
     qNumber: "Question 1",
     question: "Which is a value of a boolean?",
@@ -24,7 +28,7 @@ var Q1 = {
 };
 
 var Q2 = {
-    qNumber: "Question 2",
+    qNumber: "Question 2", 
     question: "Commonly used data types DO NOT Include ",
     C1: "strings",
     C2: "booleans",
@@ -85,10 +89,42 @@ var Q7 = {
     answer: "C4"
 }
 
+var Q8 = {
+    qNumber: "Question 8",
+    question: "Which symbol is used to end a Javascript Statement?",
+    C1: "!",
+    C2: "@",
+    C3: "#",
+    C4: ";",
+    answer: "C4"
+};
+
+var Q9 = {
+    qNumber: "Question 9",
+    question: "What are the parts to a for loop?",
+    C1: "Initialization",
+    C2: "Termination",
+    C3: "Increment",
+    C4: "All of the above",
+    answer: "C4"
+};
+
+var Q10 = {
+    qNumber: "Question 10",
+    question: "What is the correct way to name a variable ",
+    C1: "firstName",
+    C2: "1stName",
+    C3: "FirstName",
+    C4: "All of the above",
+    answer: "C1"
+};
 
 
-var questionsArray = [Q1, Q2, Q3, Q4, Q5, Q6, Q7];
-var secondsLeft = questionsArray.length * 15; 
+
+
+// All Questions make up an array 
+var questionsArray = [Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10 ];
+var secondsLeft = questionsArray.length * 9; 
 var questionIndex = 0;
 
 function setTime() {
@@ -122,6 +158,8 @@ function startQuiz () {
     quizDisplay();
 }
 
+
+// This function disiplays the questions 
 function quizDisplay () {
     document.getElementById("Q").innerHTML = questionsArray[questionIndex].qNumber + ": " + questionsArray[questionIndex].question;
     document.getElementById("C1").innerHTML = questionsArray[questionIndex].C1;
